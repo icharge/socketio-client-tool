@@ -36,7 +36,7 @@
       right: 30px;
     }
 
-    .panel-heading > button {
+    .panel-heading>button {
       margin-left: 10px;
     }
 
@@ -65,7 +65,8 @@
         </button>
         <a class="navbar-brand" href="#">Socket.io Client Tool</a>
       </div>
-      <p class="navbar-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<iframe src="https://ghbtns.com/github-btn.html?user=amritb&repo=socketio-client-tool&type=star&count=true&size=small" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></p>
+      <p class="navbar-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<iframe src="https://ghbtns.com/github-btn.html?user=amritb&repo=socketio-client-tool&type=star&count=true&size=small"
+          frameborder="0" scrolling="0" width="170px" height="20px"></iframe></p>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <p class="navbar-text navbar-right">&nbsp; &nbsp;</p>
         <form id="connect" class="navbar-form navbar-right" role="search" style="margin-right: -30px;">
@@ -97,54 +98,44 @@
     </ul>
     <div class="tab-content">
       <div class="row tab-pane" role="tabpanel" id="emiting">
-        <p>
-          <div class="col-sm-12">
-            <div id="emitPanel">
-              <form id="emitData">
-                <div class="form-group well">
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" id="event-name" placeholder="Event name">
+        <div class="col-sm-12">
+          <div id="emitPanel">
+            <form id="emitData">
+              <div class="form-group well">
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="event-name" placeholder="Event name">
+                </div>
+                <button id="submitEmit" type="submit" class="btn btn-success" disabled>Emit</button>
+                <span class="label label-primary emitted-msg">Event emitted!</span>
+                <span class="label label-danger emitted-failure-msg">Event failure</span>
+              </div>
+              <div class="form-group">
+                <label class="radio-inline">
+                  <input id="emitAsPlaintext" type="radio" name="emitAs" value="plaintext" checked="checked" />
+                  Send data as plaintext
+                </label>
+                <label class="radio-inline">
+                  <input id="emitAsJSON" type="radio" name="emitAs" value="JSON" />
+                  Send data as JSON object
+                </label>
+              </div>
+              <div class="form-group">
+                <div id="plainTextData">
+                  <label for="data-text" class="control-label">Data: plaintext</label>
+                  <textarea class="form-control" id="data-text"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div id="jsonData">
+                  <div>
+                    <label for="data-text" class="control-label">Data: JSON (key, value)</label>
                   </div>
-                  <button id="submitEmit" type="submit" class="btn btn-success" disabled>Emit</button>
-                  <span class="label label-primary emitted-msg">Event emitted!</span>
-                  <span class="label label-danger emitted-failure-msg">Event failure</span>
+                  <textarea class="form-control" id="data-json"></textarea>
                 </div>
-                <div class="form-group">
-                  <label class="radio-inline">
-                    <input id="emitAsPlaintext" type="radio" name="emitAs" value="plaintext" checked="checked" />
-                    Send data as plaintext
-                  </label>
-                  <label class="radio-inline">
-                    <input id="emitAsJSON" type="radio" name="emitAs" value="JSON" />
-                    Send data as JSON object
-                  </label>
-                </div>
-                <div class="form-group">
-                  <div id="plainTextData">
-                    <label for="data-text" class="control-label">Data: plaintext</label>
-                    <textarea class="form-control" id="data-text"></textarea>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div id="jsonData">
-                    <div>
-                      <label for="data-text" class="control-label">Data: JSON (key, value)</label>
-                    </div>
-                    <button id="addNewJsonField" type="button" class="btn btn-xs btn-warning">add new</button></br>
-                    <div class="form-inline">
-                      <div class="form-group">
-                        <input type="text" class="form-control key">
-                      </div>
-                      <div class="form-group">
-                        <input type="text" class="form-control value">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
+              </div>
+            </form>
           </div>
-        </p>
+        </div>
       </div>
       <div class="row tab-pane active" role="tabpanel" id="listening">
         <p>
@@ -165,7 +156,8 @@
             <div id="eventPanels">
               <div class="panel panel-primary" id="panel-connected">
                 <div class="panel-heading">
-                  <button type="button" class="btn btn-warning btn-xs pull-right" data-toggle="collapse" data-target="#connectionPanel" aria-expanded="false" aria-controls="connectionPanel">
+                  <button type="button" class="btn btn-warning btn-xs pull-right" data-toggle="collapse" data-target="#connectionPanel"
+                    aria-expanded="false" aria-controls="connectionPanel">
                     Toggle panel</button>
                   <button type="button" class="btn btn-warning btn-xs pull-right" onclick="clearEvents('connectionPanel')">
                     Clear Events</button>
